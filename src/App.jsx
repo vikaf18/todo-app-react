@@ -1,5 +1,13 @@
 import { useState, useEffect } from "react";
 
+const formatDate = (date) => {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+
+  return `${day}.${month}.${year}`;
+}
+
 const App = () => {
   // Состояние задач
   const [todos, setTodos] = useState([
@@ -79,7 +87,7 @@ const App = () => {
   return (
     <div className="layout">
       <div>
-        <form onSubmit = {(e) => onSubmitHandle(e)}>
+        <form onSubmit = {(e) => onSubmitHandle(e)} className="text_form">
           <h2>Добавить задачу:</h2>
           <input 
             type = "text" 
@@ -90,19 +98,19 @@ const App = () => {
         </form>
       </div>
 
-      <div>
+      <div className="form">
         {
           todos.map((todo) => {
             return (
-              <div>
-                <h3>{todo.name} ({todo.date.toString()})</h3>
-                <div>
-                  <button 
+              <div className="block">
+                <h3>{todo.name} ({formatDate(todo.date)})</h3>
+                <div className="buttons">
+                  <button className="button block_yes"
                     onClick={() => onCheckedToggle(todo.id)}
                   >
                     {todo.checked ? "Не выполнено" : "Выполнено"}
                   </button>
-                  <button
+                  <button className="button block_no"
                     onClick={() => onDeleteTodoById(todo.id)}>
                       Удалить
                   </button>

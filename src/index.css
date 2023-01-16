@@ -15,5 +15,61 @@ body {
 .layout {
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+input {
+  padding: 10px;
+}
+
+.text_form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.block {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgb(47, 0, 255);
+  padding: 10px;
+  align-items: center;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  padding: 10px;
+  background-color: rgb(10, 173, 70);
+  border: none;
+  outline: none;
+
+  /* color: #fff; */
+}
+
+.block_yes {
+  background-color: rgb(85, 255, 0);
+}
+
+.block_no {
+  background-color: rgb(255, 0, 0);
 }
